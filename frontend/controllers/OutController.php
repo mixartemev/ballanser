@@ -5,30 +5,13 @@ namespace frontend\controllers;
 use Yii;
 use frontend\models\Out;
 use yii\data\ActiveDataProvider;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * OutController implements the CRUD actions for Out model.
  */
-class OutController extends Controller
+class OutController extends CommonController
 {
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * Lists all Out models.
      * @return mixed

@@ -8,7 +8,7 @@ use yii\db\Migration;
  *
  * - `to`
  */
-class m170204_185940_create_to_table extends Migration
+class m170204_185905_create_to_table extends Migration
 {
     /**
      * @inheritdoc
