@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Outs');
+$this->title = Yii::t('app', 'Расходы');
 $this->params['breadcrumbs'][] = $this->title;
 $model = new \frontend\models\Out();
 ?>
