@@ -16,9 +16,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'val')->textInput() ?>
 
-    <?= $form->field($model, 'from_id')->dropDownList( ArrayHelper::map( From::find()->all(), 'id', 'name'), ['prompt' => 'Корневая категория']) ?>
+    <?= $form->field($model, 'from_id')->dropDownList( ArrayHelper::map( From::find()->all(), 'id', 'name'), ['prompt' => 'Выбери категорию приходов']) ?>
 
-    <?= $form->field($model, 'when')->textInput() ?>
+	<?= $form->field($model, 'when')->widget('trntv\yii\datetime\DateTimeWidget', [
+		'phpDatetimeFormat' => 'yyyy-MM-dd HH:mm',
+		'momentDatetimeFormat' => 'YYYY-MM-DD HH:mm'
+	]) ?>
 
     <?= $form->field($model, 'comment')->textInput(['maxlength' => true]) ?>
 
