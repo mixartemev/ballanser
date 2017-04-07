@@ -1,5 +1,7 @@
 <?php
 
+use frontend\models\To;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -14,9 +16,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'val')->textInput() ?>
 
-    <?= $form->field($model, 'to_id')->textInput() ?>
+    <?= $form->field($model, 'to_id')->dropDownList( ArrayHelper::map(To::find()->all(), 'id', 'name'), ['prompt' => 'Корневая категория']) ?>
 
-    <?= $form->field($model, 'when')->textInput() ?>
+    <?= $form->field($model, 'when')->widget('trntv\yii\datetime\DateTimeWidget', [
+        'phpDatetimeFormat' => 'yyyy-MM-dd HH:mm',
+        'momentDatetimeFormat' => 'YYYY-MM-DD HH:mm'
+    ]) ?>
 
     <?= $form->field($model, 'comment')->textInput(['maxlength' => true]) ?>
 

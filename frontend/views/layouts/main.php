@@ -28,14 +28,13 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => Html::img('@web/logo.png') . mb_substr(Yii::$app->name, 1),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
         ['label' => Yii::t('app', 'From'), 'url' => ['/from']],
         ['label' => Yii::t('app', 'In'), 'url' => ['/in']],
         ['label' => Yii::t('app', 'To'), 'url' => ['/to']],

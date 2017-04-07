@@ -1,5 +1,7 @@
 <?php
 
+use frontend\models\From;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -14,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'val')->textInput() ?>
 
-    <?= $form->field($model, 'from_id')->textInput() ?>
+    <?= $form->field($model, 'from_id')->dropDownList( ArrayHelper::map( From::find()->all(), 'id', 'name'), ['prompt' => 'Корневая категория']) ?>
 
     <?= $form->field($model, 'when')->textInput() ?>
 

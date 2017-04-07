@@ -118,3 +118,14 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+.navbar-inverse .navbar-brand{
+    font-weight: bold;
+    color: #83c552;
+    text-shadow: 2px 1px #666;
+    padding-top: 5px;
+}
+.navbar-brand img{
+    display: inline-block;
+    height: 40px;
+    margin: 0 -10px 8px 0;
+}

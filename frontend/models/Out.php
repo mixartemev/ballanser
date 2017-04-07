@@ -45,11 +45,10 @@ class Out extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'val' => 'Val',
-            'to_id' => 'To ID',
-            'when' => 'When',
-            'comment' => 'Comment',
+            'val' => 'Сколько',
+            'to.name' => 'Категория',
+            'when' => 'Когда',
+            'comment' => 'Че',
         ];
     }
 
