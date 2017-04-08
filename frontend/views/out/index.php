@@ -21,11 +21,7 @@ $model = new \frontend\models\Out();
 
     <?= $form->field($model, 'to_id')->dropDownList( ArrayHelper::map( To::find()->all(), 'id', 'name'), ['prompt' => 'Корневая категория']) ?>
 
-    <?= $form->field($model, 'when')->widget('trntv\yii\datetime\DateTimeWidget', [
-        'phpDatetimeFormat' => 'yyyy-MM-dd HH:mm',
-        'momentDatetimeFormat' => 'YYYY-MM-DD HH:mm',
-        'clientOptions' => ['defaultDate' => date("m/d/Y H:i")],
-    ]) ?>
+    <?= $form->field($model, 'when')->textInput(['type' => 'date']) ?>
 
     <?= $form->field($model, 'comment')->textInput(['maxlength' => true, 'placeholder' => 'На что именно!?']) ?>
 

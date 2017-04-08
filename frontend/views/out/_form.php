@@ -18,10 +18,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'to_id')->dropDownList( ArrayHelper::map(To::find()->all(), 'id', 'name'), ['prompt' => 'Выбери категорию растрат']) ?>
 
-    <?= $form->field($model, 'when')->widget('trntv\yii\datetime\DateTimeWidget', [
-        'phpDatetimeFormat' => 'yyyy-MM-dd HH:mm',
-        'momentDatetimeFormat' => 'YYYY-MM-DD HH:mm'
-    ]) ?>
+	<?= $form->field($model, 'when')->textInput(['type' => 'date']) ?>
 
     <?= $form->field($model, 'comment')->textInput(['maxlength' => true]) ?>
 
