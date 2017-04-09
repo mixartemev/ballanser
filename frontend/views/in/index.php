@@ -43,8 +43,12 @@ $model = new \frontend\models\In();
 				        Yii::$app->formatter->asInteger($model->val),
 				        Yii::$app->getUrlManager()->createUrl(['in/update','id' => $key]),
 				        ['title' => Yii::t('app', 'Edit In ') . $model->comment]
-			        ) . ' ' . Yii::$app->formatter->currencyCode;
+			        ) . ' ' .
+			               Html::tag('span', Yii::$app->formatter->currencyCode , [
+				               'class' => 'text-' . ($model->when > date('Y-m-d') ? 'success' : 'danger')
+			               ]);
 		        },
+                'contentOptions' => ['style' => 'text-align:right']
 	        ],
             'from.name',
             'when:date',
