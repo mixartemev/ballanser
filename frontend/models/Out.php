@@ -48,11 +48,11 @@ class Out extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'val' => 'Сколько',
-            'to.name' => 'Категория',
-            'user.username' => 'Кто',
-            'when' => 'Когда',
-            'comment' => 'Че',
+	        'val' => Yii::t('app', 'How much'),
+	        'to.name' => Yii::t('app', 'To'),
+	        'user.username' => Yii::t('app', 'Who'),
+	        'when' => Yii::t('app', 'When'),
+	        'comment' => Yii::t('app', 'For WHAT'),
         ];
     }
 

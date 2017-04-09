@@ -15,15 +15,16 @@ $this->params['breadcrumbs'][] = $this->title;
 $model = new \frontend\models\Out();
 ?>
 <div class="out-index">
+
     <?php $form = ActiveForm::begin(['action' => ['create'], 'layout' => 'inline']); ?>
 
-    <?= $form->field($model, 'val')->textInput(['type' => 'number', 'placeholder' => Yii::t('app', 'How much?')]) ?>
+    <?= $form->field($model, 'val')->textInput(['type' => 'number', 'placeholder' => Yii::t('app', 'How much') . '?']) ?>
 
     <?= $form->field($model, 'to_id')->dropDownList( ArrayHelper::map( To::find()->all(), 'id', 'name')) ?>
 
     <?= $form->field($model, 'when')->textInput(['type' => 'date']) ?>
 
-    <?= $form->field($model, 'comment')->textInput(['maxlength' => true, 'placeholder' => Yii::t('app', 'For WHAT!?')]) ?>
+    <?= $form->field($model, 'comment')->textInput(['maxlength' => true, 'placeholder' => Yii::t('app', 'For WHAT') . '!?']) ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', '+ Spend again'), ['class' => 'btn btn-success']) ?>

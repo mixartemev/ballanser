@@ -48,11 +48,11 @@ class In extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'val' => 'Сколько',
-            'from.name' => 'От куда',
-            'user.username' => 'Кому',
-            'when' => 'Когда',
-            'comment' => 'Че',
+            'val' => Yii::t('app', 'How much'),
+            'from.name' => Yii::t('app', 'From'),
+            'user.username' => Yii::t('app', 'Who'),
+            'when' => Yii::t('app', 'When'),
+            'comment' => Yii::t('app', 'For what'),
         ];
     }
 

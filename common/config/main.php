@@ -1,5 +1,6 @@
 <?php
 return [
+	'language'=>'ru-RU',
     'name' => 'Ballanser',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
@@ -13,6 +14,13 @@ return [
             'timeFormat' => 'HH:mm',
             'defaultTimeZone' => 'Europe/Moscow',
             'currencyCode' => 'RUR',
-        ]
+        ],
+        /*'i18n' => [
+	        'translations' => [
+		        '*' => [
+			        'class' => 'yii\i18n\PhpMessageSource'
+		        ],
+	        ],
+        ],*/
     ],
 ];

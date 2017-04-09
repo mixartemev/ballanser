@@ -18,13 +18,13 @@ $model = new \frontend\models\In();
 
 	<?php $form = ActiveForm::begin(['action' => ['create'], 'layout' => 'inline']); ?>
 
-	<?= $form->field($model, 'val')->textInput(['type' => 'number', 'placeholder' => Yii::t('app', 'How much?')]) ?>
+	<?= $form->field($model, 'val')->textInput(['type' => 'number', 'placeholder' => Yii::t('app', 'How much') . '?']) ?>
 
 	<?= $form->field($model, 'from_id')->dropDownList( ArrayHelper::map( From::find()->all(), 'id', 'name')) ?>
 
 	<?= $form->field($model, 'when')->textInput(['type' => 'date']) ?>
 
-	<?= $form->field($model, 'comment')->textInput(['maxlength' => true, 'placeholder' => Yii::t('app', 'For what?')]) ?>
+	<?= $form->field($model, 'comment')->textInput(['maxlength' => true, 'placeholder' => Yii::t('app', 'For what') . '?']) ?>
 
     <div class="form-group">
 		<?= Html::submitButton(Yii::t('app', '+ I got cash again'), ['class' => 'btn btn-success']) ?>

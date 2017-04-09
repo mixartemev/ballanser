@@ -45,8 +45,8 @@ class From extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name' => 'From',
-            'parent_id' => 'Category',
+            'name' => Yii::t('app', 'From'),
+            'parent.name' => Yii::t('app', 'Category'),
         ];
     }
 

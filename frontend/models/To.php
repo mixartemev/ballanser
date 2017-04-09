@@ -3,6 +3,7 @@
 namespace frontend\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "to".
@@ -15,7 +16,7 @@ use Yii;
  * @property To $parent
  * @property To[] $tos
  */
-class To extends \yii\db\ActiveRecord
+class To extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -44,8 +45,8 @@ class To extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name' => 'Куда',
-            'parent.name' => 'Раздел',
+            'name' => Yii::t('app', 'To'),
+            'parent.name' => Yii::t('app', 'Category'),
         ];
     }
 
