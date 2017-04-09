@@ -19,7 +19,7 @@ class InController extends CommonController
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => In::find(),
+            'query' => In::find()->orderBy('when desc'),
         ]);
 
         return $this->render('index', [
