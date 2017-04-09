@@ -35,7 +35,7 @@ class In extends ActiveRecord
         return [
             [['val'], 'required'],
             [['val', 'from_id', 'user_id'], 'integer'],
-            [['when'], 'safe'],
+	        ['when', 'default', 'value' => date('Y-m-d')],
             [['comment'], 'string', 'max' => 255],
             [['from_id'], 'exist', 'skipOnError' => true, 'targetClass' => From::className(), 'targetAttribute' => ['from_id' => 'id']],
 	        [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
