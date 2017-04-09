@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'val')->textInput() ?>
 
-    <?= $form->field($model, 'from_id')->dropDownList( ArrayHelper::map( From::find()->all(), 'id', 'name'), ['prompt' => 'Выбери категорию приходов']) ?>
+    <?= $form->field($model, 'from_id')->dropDownList( ArrayHelper::map( From::find()->all(), 'id', 'name')) ?>
 
 	<?= $form->field($model, 'when')->textInput(['type' => 'date']) ?>
 

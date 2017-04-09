@@ -3,6 +3,7 @@
 namespace frontend\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "in".
@@ -10,12 +11,13 @@ use Yii;
  * @property integer $id
  * @property integer $val
  * @property integer $from_id
+ * @property integer $user_id
  * @property string $when
  * @property string $comment
  *
  * @property From $from
  */
-class In extends \yii\db\ActiveRecord
+class In extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -32,10 +34,11 @@ class In extends \yii\db\ActiveRecord
     {
         return [
             [['val'], 'required'],
-            [['val', 'from_id'], 'integer'],
+            [['val', 'from_id', 'user_id'], 'integer'],
             [['when'], 'safe'],
             [['comment'], 'string', 'max' => 255],
             [['from_id'], 'exist', 'skipOnError' => true, 'targetClass' => From::className(), 'targetAttribute' => ['from_id' => 'id']],
+	        [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
 
@@ -45,11 +48,11 @@ class In extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'val' => 'Val',
-            'from_id' => 'From ID',
-            'when' => 'When',
-            'comment' => 'Comment',
+            'val' => 'Сколько',
+            'from.name' => 'От куда',
+            'user.username' => 'Кому',
+            'when' => 'Когда',
+            'comment' => 'Че',
         ];
     }
 
@@ -60,4 +63,17 @@ class In extends \yii\db\ActiveRecord
     {
         return $this->hasOne(From::className(), ['id' => 'from_id']);
     }
+
+	/**
+	 * @return \yii\db\ActiveQuery
+	 */
+	public function getUser()
+	{
+		return $this->hasOne(User::className(), ['id' => 'user_id']);
+	}
+
+	public function beforeSave( $insert ) {
+		$this->user_id = Yii::$app->user->id;
+		return parent::beforeSave( $insert );
+	}
 }

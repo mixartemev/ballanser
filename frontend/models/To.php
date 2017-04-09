@@ -44,9 +44,8 @@ class To extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'parent_id' => 'Parent ID',
+            'name' => 'Куда',
+            'parent.name' => 'Раздел',
         ];
     }
 

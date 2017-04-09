@@ -8,7 +8,7 @@ return [
         ],
         'formatter' => [
             'class' => 'yii\i18n\Formatter',
-            //'dateFormat' => 'Y-MM-dd',
+            'dateFormat' => 'Y-MM-dd',
             'datetimeFormat' => 'Y-MM-dd HH:mm',
             'timeFormat' => 'HH:mm',
             'defaultTimeZone' => 'Europe/Moscow',

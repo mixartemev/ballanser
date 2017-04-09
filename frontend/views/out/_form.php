@@ -16,14 +16,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'val')->textInput() ?>
 
-    <?= $form->field($model, 'to_id')->dropDownList( ArrayHelper::map(To::find()->all(), 'id', 'name'), ['prompt' => 'Выбери категорию растрат']) ?>
+    <?= $form->field($model, 'to_id')->dropDownList( ArrayHelper::map(To::find()->all(), 'id', 'name')) ?>
 
 	<?= $form->field($model, 'when')->textInput(['type' => 'date']) ?>
 
     <?= $form->field($model, 'comment')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'),
+            ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

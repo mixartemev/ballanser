@@ -3,6 +3,7 @@
 namespace frontend\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "from".
@@ -15,7 +16,7 @@ use Yii;
  * @property From[] $froms
  * @property In[] $ins
  */
-class From extends \yii\db\ActiveRecord
+class From extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -44,9 +45,8 @@ class From extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'parent_id' => 'Parent ID',
+            'name' => 'From',
+            'parent_id' => 'Category',
         ];
     }
 
