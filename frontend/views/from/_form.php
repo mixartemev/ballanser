@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'parent_id')->dropDownList( ArrayHelper::map(From::find()->filterWhere(['NOT', 'id' => $model->id])->all(), 'id', 'name'), ['prompt' => 'Корневая категория']) ?>
+    <?= $form->field($model, 'parent_id')->dropDownList( ArrayHelper::map(From::find()->filterWhere(['NOT', ['id' => $model->id]])->all(), 'id', 'name'), ['prompt' => 'Корневая категория']) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
